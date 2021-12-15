@@ -5,7 +5,7 @@ Unity 2019.1くらい
 その後ある事情でGetDataとAsyncGPUReadback.Requestを使ったコードでGPU→CPU転送の同期、非同期の影響がフレームレートにどう影響するか気になり検証するために作った。  
   
 ## 結果  
-![gaiyou](https://user-images.githubusercontent.com/44022497/146126957-6ac5e169-46dd-429f-b4c4-25fd65d0a600.png)  
+![gaiyou2](https://user-images.githubusercontent.com/44022497/146127356-f3f55110-80a3-4281-9a8e-a6f2f2add39f.png)  
 ①同期GetData前つき27 .3fps  
 ②非同期29 .2fps  
 ③同期GetData後ろつき27 .3fps  
