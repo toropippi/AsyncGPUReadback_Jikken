@@ -1,0 +1,62 @@
+﻿// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel CSMain
+
+RWStructuredBuffer<float> posbuf;
+float time;
+
+[numthreads(64,1,1)]
+void CSMain (uint id : SV_DispatchThreadID)
+{
+	
+	float tmp;
+	uint ut;
+	double dut, ss;
+
+	tmp = sin(0.62124346 + time + 0.1 * id) * 129571.1245;
+	ut = (uint)tmp;
+	dut = ut;
+	ss;
+	for (uint i = 0; i < 1298 + ut % 66; i++)
+	{
+		ss = sin(0.62124346 + dut + 0.1 * id) * 129571.1245;
+		dut = ss * 0.02 + 3.1315;
+	}
+
+	ut = (uint)(dut * 123015.0);
+	ut %= 101;
+	posbuf[id * 3 + 0] += 0.001 * ut - 0.05;
+	posbuf[id * 3 + 0] -= 0.001 * posbuf[id * 3 + 0] * posbuf[id * 3 + 0] * posbuf[id * 3 + 0];
+
+
+	tmp = sin(0.12462346 + time + 0.3 * id) * 657571.1245;
+	ut = (uint)tmp;
+	dut = ut;
+	ss;
+	for (uint i = 0; i < 1298 + ut % 66; i++)
+	{
+		ss = sin(0.12462346 + dut + 0.3 * id) * 657571.1245;
+		dut = ss * 0.02 + 3.1315;
+	}
+
+
+	ut = (uint)tmp;
+	ut %= 101;
+	posbuf[id * 3 + 1] += 0.001 * ut - 0.05;
+	posbuf[id * 3 + 1] -= 0.001 * posbuf[id * 3 + 1] * posbuf[id * 3 + 1] * posbuf[id * 3 + 1];
+
+
+	tmp = sin(0.72312446 + time + 0.2 * id) * 575131.1245;
+	ut = (uint)tmp;
+	dut = ut;
+	ss;
+	for (uint i = 0; i < 1298 + ut % 66; i++)
+	{
+		ss = sin(0.72312446 + time + 0.2 * id) * 575131.1245;
+		dut = ss * 0.02 + 3.1315;
+	}
+
+	ut = (uint)tmp;
+	ut %= 101;
+	posbuf[id * 3 + 2] += 0.001 * ut - 0.05;
+	posbuf[id * 3 + 2] -= 0.001 * posbuf[id * 3 + 2] * posbuf[id * 3 + 2] * posbuf[id * 3 + 2];
+}
